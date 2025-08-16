@@ -17,7 +17,7 @@ tags:
 
 # snell节点搭建
 
-本文参考了整点猫咪大佬的文章，并做了一些修改与简化。
+本文参考了[整点猫咪](https://www.google.com/search?client=safari&rls=en&q=%E6%90%AD%E5%BB%BAsnell&ie=UTF-8&oe=UTF-8)大佬的文章，并做了一些修改与简化。
 
 注意：基于debian12，应该适用于debian系列机器。其他发行版需要自己研究基础操作。
 
@@ -35,7 +35,7 @@ sudo dnf install unzip
 
 #### 第二部：下载SnellServer
 
-> 文档使用的是snell的最新版本也就是V5，根据你的创建时间和实际需求自行去官网查找版本号。
+> 文档使用的是snell的最新版本也就是V5，根据你的创建时间和实际需求自行去[官网](https://kb.nssurge.com/surge-knowledge-base/zh/release-notes/snell)查找版本号。
 
 **linux-amd64**
 
