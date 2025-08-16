@@ -6,9 +6,9 @@ date: 2025-08-16 18:05:00+0000
 image: cover.jpeg
 categories:
     - 魔法制作
+    - VPS配置
 tags:
     - 魔法上网
-    - VPS配置
     - 节点搭建
 #weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
