@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on wdnmlgbd笔记/博客</title><link>https://tencentx.us.kg/post/</link><description>Recent content in Posts on wdnmlgbd笔记/博客</description><generator>Hugo -- gohugo.io</generator><language>zh-Hans</language><lastBuildDate>Sat, 16 Aug 2025 20:05:00 +0800</lastBuildDate><atom:link href="https://tencentx.us.kg/post/index.xml" rel="self" type="application/rss+xml"/><item><title>3-XUI搭建节点</title><link>https://tencentx.us.kg/p/vlessbuild1/</link><pubDate>Sat, 16 Aug 2025 20:05:00 +0800</pubDate><guid>https://tencentx.us.kg/p/vlessbuild1/</guid><description>&lt;img src="https://tencentx.us.kg/p/vlessbuild1/cover.png" alt="Featured image of post 3-XUI搭建节点" />&lt;h1 id="3-xui搭建节点">3-XUI搭建节点
+&lt;/h1>&lt;blockquote>
+&lt;p>使用最简单的方式搭建一个vless reality节点，而不是为了性能最大化。使用3-xui本身就是为了GUI操作简单&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>本文中的脚本和教程引用了DuangVPS博主发布的教程&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>可选项：&lt;/strong>&lt;/p>
+&lt;p>BBR开启和选择模式脚本 （我选14：BBR2+FQ）&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">wget -N --no-check-certificate &amp;#34;https://github.000060000.xyz/tcpx.sh&amp;#34; &amp;amp;&amp;amp; chmod +x tcpx.sh &amp;amp;&amp;amp; ./tcpx.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行BBR优化脚本（运行脚本之后先选2再运行选3）&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">bash&lt;/span> &lt;span class="o">&amp;lt;&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">curl&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">Ls&lt;/span> &lt;span class="n">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">//&lt;/span>&lt;span class="n">github&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">lanziii&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">bbr&lt;/span>&lt;span class="o">-/&lt;/span>&lt;span class="n">releases&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">download&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">123&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">tools&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sh&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="第一步安装3x-ui">第一步：安装3x-ui
+&lt;/h4>&lt;p>&lt;strong>安装命令&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>运行脚本后会有如下提示意思是是否需要自定义配置，键入&lt;code>y&lt;/code>然后回车；&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Do you want to continue with the modification y/n?
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>会接连出现如下需要自定义的配置&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Please set up your username: 后面输入要设置的面板用户名
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please set up your password: 后面输入要设置的面板密码
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please set up the panel port: 后面输入你要设置的面板端口
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>面板创建完成&lt;/strong>&lt;/p>
+&lt;p>如果需要更改配置如端口号等，在终端输入以下命令即可&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">x-ui
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="第二步进入面板创建节点">第二步：进入面板创建节点
+&lt;/h4>&lt;p>&lt;strong>在浏览器地址栏按照如下格式输入面板地址&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">vpsip:端口号/面板路径
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>输入第一步中配置的用户名和密码&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/vlessbuild1/log.png"
+width="929"
+height="656"
+srcset="https://tencentx.us.kg/p/vlessbuild1/log_hu_9ff20878725c80f7.png 480w, https://tencentx.us.kg/p/vlessbuild1/log_hu_9c06f44e442f003a.png 1024w"
+loading="lazy"
+alt="log"
+class="gallery-image"
+data-flex-grow="141"
+data-flex-basis="339px"
+>&lt;/p>
+&lt;p>&lt;strong>可以在这里重新设置你的X-UI的端口和面板&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/vlessbuild1/set.png"
+width="1462"
+height="649"
+srcset="https://tencentx.us.kg/p/vlessbuild1/set_hu_fff17efd9077bdf6.png 480w, https://tencentx.us.kg/p/vlessbuild1/set_hu_f17549dec3520d4.png 1024w"
+loading="lazy"
+alt="set"
+class="gallery-image"
+data-flex-grow="225"
+data-flex-basis="540px"
+>&lt;/p>
+&lt;p>&lt;strong>点击添加入站&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/vlessbuild1/build1.png"
+width="692"
+height="240"
+srcset="https://tencentx.us.kg/p/vlessbuild1/build1_hu_46eff56a4c7679d3.png 480w, https://tencentx.us.kg/p/vlessbuild1/build1_hu_9209436b684053cb.png 1024w"
+loading="lazy"
+alt="build1"
+class="gallery-image"
+data-flex-grow="288"
+data-flex-basis="692px"
+>&lt;/p>
+&lt;p>&lt;strong>然后按照下图直接配置就可以&lt;/strong>&lt;/p>
+&lt;p>把图二中客户ID中第一个 ‘-’ 前面的自负复制到图三中Dest(Target)中的.com前面去替换掉原来的字符&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/vlessbuild1/build2.png"
+width="509"
+height="367"
+srcset="https://tencentx.us.kg/p/vlessbuild1/build2_hu_882cd831b442303a.png 480w, https://tencentx.us.kg/p/vlessbuild1/build2_hu_46876259c35f9205.png 1024w"
+loading="lazy"
+alt="build2"
+class="gallery-image"
+data-flex-grow="138"
+data-flex-basis="332px"
+>&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/vlessbuild1/build3.png"
+width="509"
+height="367"
+srcset="https://tencentx.us.kg/p/vlessbuild1/build3_hu_ba6c941700293571.png 480w, https://tencentx.us.kg/p/vlessbuild1/build3_hu_bf03eefc15ada773.png 1024w"
+loading="lazy"
+alt="build3"
+class="gallery-image"
+data-flex-grow="138"
+data-flex-basis="332px"
+>&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/vlessbuild1/build4.png"
+width="486"
+height="777"
+srcset="https://tencentx.us.kg/p/vlessbuild1/build4_hu_d04306ec15a65184.png 480w, https://tencentx.us.kg/p/vlessbuild1/build4_hu_324c8a7c8ee30ff6.png 1024w"
+loading="lazy"
+alt="build4"
+class="gallery-image"
+data-flex-grow="62"
+data-flex-basis="150px"
+>&lt;/p>
+&lt;blockquote>
+&lt;p>节点这就搭建好了&lt;/p>&lt;/blockquote>
+&lt;h4 id="第三步将节点添加到clash">第三步：将节点添加到clash
+&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">proxies:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: &amp;#34;节点名称&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> type: vless
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> server: 127.0.0.1 #这里要写节点服务器的公网ip地址
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> port: 25024 #创建节点时设置的端口号
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> uuid: 4357ef26-9987-90jx1a-a5df-2151dacc7020 #这里写图二中的ID
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> network: tcp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> tls: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> udp: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> flow: xtls-rprx-vision
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> servername: 4287ef26.com # 这里写图二中的Dest(Target)配置的网址
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> reality-opts:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> public-key: FlD9auoJ5TkEydv_mORuZ2SEE6WRGFtTjLz2G1awQXQ #这里写图三中获取的公钥
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> short-id: e6d376d33a5cd40c # 这里写图三中的Short IDs
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> client-fingerprint: random # cannot be empty
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>snell节点搭建</title><link>https://tencentx.us.kg/p/snell%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/</link><pubDate>Sat, 16 Aug 2025 18:05:00 +0800</pubDate><guid>https://tencentx.us.kg/p/snell%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/</guid><description>&lt;img src="https://tencentx.us.kg/p/snell%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/cover.jpeg" alt="Featured image of post snell节点搭建" />&lt;h1 id="snell节点搭建">snell节点搭建
+&lt;/h1>&lt;p>本文参考了&lt;a class="link" href="https://www.google.com/search?client=safari&amp;amp;rls=en&amp;amp;q=%E6%90%AD%E5%BB%BAsnell&amp;amp;ie=UTF-8&amp;amp;oe=UTF-8" target="_blank" rel="noopener"
+>整点猫咪&lt;/a>大佬的文章，并做了一些修改与简化。&lt;/p>
+&lt;p>注意：基于debian12，应该适用于debian系列机器。其他发行版需要自己研究基础操作。&lt;/p>
+&lt;h4 id="第一步下载必要软件">第一步：下载必要软件
+&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo apt update &amp;amp;&amp;amp; sudo apt install wget unzip neovim -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果你不是debian系列机器还需要这一步操作：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo dnf install unzip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="第二部下载snellserver">第二部：下载SnellServer
+&lt;/h4>&lt;blockquote>
+&lt;p>文档使用的是snell的最新版本也就是V5，根据你的创建时间和实际需求自行去&lt;a class="link" href="https://kb.nssurge.com/surge-knowledge-base/zh/release-notes/snell" target="_blank" rel="noopener"
+>官网&lt;/a>查找版本号。&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>linux-amd64&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">wget https://dl.nssurge.com/snell/snell-server-v5.0.0-linux-amd64.zip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>ARM架构&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">wget https://dl.nssurge.com/snell/snell-server-v5.0.0-linux-aarch64.zip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="第三步解压-snell-server-到置顶目录">第三步解压 Snell Server 到置顶目录
+&lt;/h4>&lt;p>&lt;strong>linux-amd64&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo unzip snell-server-v5.0.0-linux-amd64.zip -d /usr/local/bin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>ARM架构&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo unzip snell-server-v5.0.0-linux-aarch64.zip -d /usr/local/bin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="第三步操作节点搭建">第三步：操作节点搭建
+&lt;/h4>&lt;p>&lt;strong>赋予服务器权限&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">chmod +x /usr/local/bin/snell-server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>创建配置文件夹&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo mkdir /etc/snell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>使用Snell的wizard生成一个配置文件&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo snell-server --wizard -c /etc/snell/snell-server.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>配置Systemd服务文件&lt;/strong>&lt;/p>
+&lt;p>编辑snell.serverce文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo nvim /lib/systemd/system/snell.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>直接把下面的代码复制粘贴进去&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[Unit]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Description=Snell Proxy Service
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">After=network.target
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[Service]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Type=simple
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">User=nobody
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Group=nogroup
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">LimitNOFILE=32768
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ExecStart=/usr/local/bin/snell-server -c /etc/snell/snell-server.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">AmbientCapabilities=CAP_NET_BIND_SERVICE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">StandardOutput=syslog
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">StandardError=syslog
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SyslogIdentifier=snell-server
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[Install]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">WantedBy=multi-user.target
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>继续执行重载服务&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sudo&lt;/span> &lt;span class="n">systemctl&lt;/span> &lt;span class="n">daemon&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">reload&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>配置snell开机自启动&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo systemctl enable snell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>查看snell状态&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo systemctl status snell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>执行完以上步骤，并且snell状态没有报错（全绿），那节点就搭建好了&lt;/p>&lt;/blockquote>
+&lt;h4 id="第四步查看snell配置并且在surge中添加">第四步：查看Snell配置，并且在Surge中添加
+&lt;/h4>&lt;p>&lt;strong>查看snell配置&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">cat /etc/snell/snell-server.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>你会得到如下输出：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[snell-server]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">listen = 0.0.0.0:11807
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">psk = AijHCeos15IvqDZTb1cJMX5GcgZzIVE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ipv6 = false
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>如果直接在surge的配置文件中添加那么直接写&lt;/strong>：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">节点名称 = snell, XXX.XXX.XXX.XXX, 11807, psk=psk, version=5, tfo=true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>如果要在Surge的GUI中添加那么这样填写&lt;/strong>：&lt;/p>
+&lt;p>名称：节点名称&lt;/p>
+&lt;p>代理类型：选择SNELL&lt;/p>
+&lt;p>服务器地址：填写搭建SNELL服务器的IP地址&lt;/p>
+&lt;p>端口号：填写listen那里冒号后面的部分&lt;/p>
+&lt;p>psk:填写psk&lt;/p>
+&lt;p>协议版本：选择v5&lt;/p>
+&lt;p>Obfs：Disabled&lt;/p>
+&lt;p>TCP Fast Open：开启&lt;/p>
+&lt;p>IPV4&amp;amp;IPV6：双栈&lt;/p></description></item><item><title>Nginx Proxy Manager反向代理</title><link>https://tencentx.us.kg/p/nginx-proxy-manager%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 16 Aug 2025 03:01:00 +0000</pubDate><guid>https://tencentx.us.kg/p/nginx-proxy-manager%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid><description>&lt;img src="https://tencentx.us.kg/p/nginx-proxy-manager%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/cover.jpg" alt="Featured image of post Nginx Proxy Manager反向代理" />&lt;h1 id="nginx-proxy-manager反向代理">Nginx Proxy Manager反向代理
+&lt;/h1>&lt;h4 id="nginx-proxy-manager是一个运行在docker中的反向代理工具">&lt;strong>Nginx Proxy Manager是一个运行在docker中的反向代理工具&lt;/strong>
+&lt;/h4>&lt;p>&lt;strong>注意：docker的安装与配置不在本笔记中展示，同时也不记录docker的使用方式&lt;/strong>&lt;/p>
+&lt;h3 id="第一步安装nginx-proxy-manager">&lt;strong>第一步：安装Nginx Proxy Manager&lt;/strong>
+&lt;/h3>&lt;p>&lt;strong>docker-compose安装：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">services&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">app&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;jc21/nginx-proxy-manager:latest&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">restart&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">unless-stopped&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">ports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s1">&amp;#39;80:80&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s1">&amp;#39;81:81&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s1">&amp;#39;443:443&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">volumes&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">./data:/data&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">./letsencrypt:/etc/letsencrypt&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>docker-cli安装：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker run -d &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --name&lt;span class="o">=&lt;/span>npm &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -p 80:80 &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -p 81:81 &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -p 443:443 &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -v /home/npm/data:/data &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> -v /home/npm/letsencrypt:/etc/letsencrypt &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> --restart&lt;span class="o">=&lt;/span>always &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> jc21/nginx-proxy-manager:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="第二步进入nginx-proxy-manager的web管理面板">&lt;strong>第二步：进入Nginx Proxy Manager的web管理面板：&lt;/strong>
+&lt;/h3>&lt;p>web管理面板地址为：vps-ip:81&lt;/p>
+&lt;p>默认用户名：admin@example.com&lt;/p>
+&lt;p>默认密码：changeme&lt;/p>
+&lt;h3 id="第三步配置反向代理">第三步：配置反向代理
+&lt;/h3>&lt;p>点击&lt;code>Add Proxy&lt;/code>即可添加反向代理&lt;/p>
+&lt;p>注意：由于Nginx Proxy Manager是一个docker容器，所以代理本机服务，填写的ip为：172.17.0.1 注意：Nginx Proxy Manager在&lt;code>Add Proxy&lt;/code>页面中只能申请单域名证书&lt;/p>
+&lt;p>注意：Nginx Proxy Manager申请的免费证书的颁发机构为：Let&amp;rsquo;s Encrypt&lt;/p></description></item><item><title>Nginx反向代理</title><link>https://tencentx.us.kg/p/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 16 Aug 2025 02:59:00 +0000</pubDate><guid>https://tencentx.us.kg/p/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid><description>&lt;img src="https://tencentx.us.kg/p/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/cover.jpg" alt="Featured image of post Nginx反向代理" />&lt;h1 id="nginx反向代理">Nginx反向代理
+&lt;/h1>&lt;p>&lt;strong>注意：基于debian12&lt;/strong>&lt;/p>
+&lt;h3 id="第一步安装nginx">第一步：安装Nginx
+&lt;/h3>&lt;p>&lt;strong>由于debian的apt包常年不更新软件包版本所以需要先添加nginx的官方软件包到 debian 系统中&lt;/strong>&lt;/p>
+&lt;p>下载密钥&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>导入官方密钥签名&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">curl &amp;lt;https://nginx.org/keys/nginx_signing.key&amp;gt; &lt;span class="p">|&lt;/span> gpg --dearmor &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置存储库&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;lt;http://nginx.org/packages/debian&amp;gt; `lsb_release -cs` nginx&amp;#34;&lt;/span> &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> sudo tee /etc/apt/sources.list.d/nginx.list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>设置固定存储库&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> -e &lt;span class="s2">&amp;#34;Package: *\\nPin: origin nginx.org\\nPin: release o=nginx\\nPin-Priority: 900\\n&amp;#34;&lt;/span> &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">|&lt;/span> sudo tee /etc/apt/preferences.d/99nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>更新软件包之后安装 nginx&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="第二步定位nginx配置">第二步：定位nginx配置
+&lt;/h3>&lt;p>在debian12中 nginx默认的配置文件夹路径&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /etc/nginx/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>进入这个文件夹创建你要反向代理的服务的文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> nginx.d
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">touch server.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在nginx根目录下新建一个用于存放SSL证书的文件夹&lt;/p>
+&lt;p>证书文件夹应该直接存放在 nginx 的根目录&lt;/p>
+&lt;p>文件夹内部每一个域名单独设置 比如 nginx/sslFile/example.com&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mkdir sslFile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="第三步配置nginx">第三步：配置nginx
+&lt;/h3>&lt;p>在conf.d文件夹中创建新的配置文件，一般情况下反代的每一个服务都创建一个新的.conf文件&lt;/p>
+&lt;p>结构为：nginx/conf.d/server1.conf server2.conf&lt;/p>
+&lt;p>以下配置为个人常用配置模板可以直接使用修改域名和服务端口号即可&lt;/p>
+&lt;p>以下配置，如果你没有什么自定义的其他需求直接复制到自己创建的反向代理文件用就可以&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 强制HTTP重定向到HTTPS（Force SSL）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> listen 80&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> listen &lt;span class="o">[&lt;/span>::&lt;span class="o">]&lt;/span>:80&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> server_name exp.example.com&lt;span class="p">;&lt;/span> &lt;span class="c1"># 改为您的域名&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="m">301&lt;/span> https://&lt;span class="nv">$host$request_uri&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1"># 自动跳转HTTPS&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 主HTTPS服务配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> listen &lt;span class="m">443&lt;/span> ssl&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> listen &lt;span class="o">[&lt;/span>::&lt;span class="o">]&lt;/span>:443 ssl&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> http2 on&lt;span class="p">;&lt;/span> &lt;span class="c1">#开启http2支持&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> server_name exp.example.com&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># SSL证书配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ssl_certificate sslFile/example.com/fullchain.cer&lt;span class="p">;&lt;/span> &lt;span class="c1"># 替换为您的证书路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ssl_certificate_key sslFile/example.com/example.key&lt;span class="p">;&lt;/span> &lt;span class="c1"># 替换为您的私钥路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ssl_protocols TLSv1.2 TLSv1.3&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ssl_ciphers HIGH:!aNULL:!MD5&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 安全防护配置（Block common exploits）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> add_header X-Frame-Options &lt;span class="s2">&amp;#34;SAMEORIGIN&amp;#34;&lt;/span> always&lt;span class="p">;&lt;/span> &lt;span class="c1"># 防点击劫持&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> add_header X-XSS-Protection &lt;span class="s2">&amp;#34;1; mode=block&amp;#34;&lt;/span> always&lt;span class="p">;&lt;/span> &lt;span class="c1"># 防XSS攻击&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> add_header X-Content-Type-Options &lt;span class="s2">&amp;#34;nosniff&amp;#34;&lt;/span> always&lt;span class="p">;&lt;/span> &lt;span class="c1"># 防MIME嗅探&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> add_header Referrer-Policy &lt;span class="s2">&amp;#34;strict-origin&amp;#34;&lt;/span> always&lt;span class="p">;&lt;/span> &lt;span class="c1"># 控制referrer信息泄露&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> add_header Strict-Transport-Security &lt;span class="s2">&amp;#34;max-age=31536000; includeSubDomains&amp;#34;&lt;/span> always&lt;span class="p">;&lt;/span> &lt;span class="c1"># 强制HTTPS增强&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 主请求代理配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> location / &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_pass &amp;lt;http://127.0.0.1:3001&amp;gt;&lt;span class="p">;&lt;/span> &lt;span class="c1"># 自定义后端服务地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_http_version 1.1&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_set_header Host &lt;span class="nv">$host&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_set_header X-Real-IP &lt;span class="nv">$remote_addr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_set_header X-Forwarded-For &lt;span class="nv">$proxy_add_x_forwarded_for&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_set_header X-Forwarded-Proto &lt;span class="nv">$scheme&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_set_header Upgrade &lt;span class="nv">$http_upgrade&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> proxy_set_header Connection &lt;span class="s2">&amp;#34;upgrade&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>nginx常用命令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查nginx配置是否有错误&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nginx&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">t&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># nginx启动&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># nginx重启&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">nginx&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="n">s&lt;/span> &lt;span class="n">reload&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>acme.sh申请证书脚本</title><link>https://tencentx.us.kg/p/acme.sh%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</link><pubDate>Sat, 16 Aug 2025 02:57:00 +0000</pubDate><guid>https://tencentx.us.kg/p/acme.sh%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/</guid><description>&lt;img src="https://tencentx.us.kg/p/acme.sh%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6%E8%84%9A%E6%9C%AC/cover.png" alt="Featured image of post acme.sh申请证书脚本" />&lt;h1 id="acmesh申请证书脚本">acme.sh申请证书脚本
+&lt;/h1>&lt;p>注意：&lt;/p>
+&lt;p>&lt;strong>基于debian12&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>基于bash，如果使用的是zsh需要自行研究是否需要转义&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>使用nginx做反向代理，部署证书&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>完全基于我个人的nginx使用习惯&lt;/strong>&lt;/p>
+&lt;p>&lt;em>简介：&lt;/em>&lt;/p>
+&lt;p>&lt;a class="link" href="http://acme.sh" target="_blank" rel="noopener"
+>*acme.sh&lt;/a> 是一个运行在linux终端的证书申请脚本，可以申请免费和付费/企业级两种证书。*&lt;/p>
+&lt;p>本笔记以申请ZeroSSL的证书为基准 acme.sh申请免费证书的机构虽然有5个，但是推荐的的机构只有三个，见下表&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>CA名称&lt;/th>
+&lt;th>ZeroSSL&lt;br /> (acme.sh默认)&lt;/th>
+&lt;th>Let&amp;rsquo;s Encrypt &lt;br />(使用最广泛，最推荐)&lt;/th>
+&lt;th>Google Public CA&lt;br /> (谷歌提供的免费CA)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>特点&lt;/td>
+&lt;td>90天有效期&lt;br />✅ 通配符支持 &lt;br />✅ 无速率限制 &lt;br />🚫 通过邮箱或EAB强制验证 &lt;br />✅自动续期不占用额度 &lt;br />✅单证书验证域名数：100&lt;/td>
+&lt;td>90天有效期&lt;br />✅ 通配符支持 &lt;br />🚫速率：50张/域名/周&lt;br />✅ 无需账户/邮箱验证&lt;br />✅自动续期不占用额度&lt;br />✅单证书验证域名数：100&lt;/td>
+&lt;td>90天有效期&lt;br />✅ 通配符支持 &lt;br />🚫速率：100张/小时 &lt;br />🚫 通过GCP项目EAB强制认证 &lt;br />✅自动续期不占用额度 &lt;br />✅单证书验证域名数：100 &lt;br />✅ 集成谷歌云服务 &lt;br />🚫项目账户申请证书 &lt;br />🚫限制：1000张/项目&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="安装与使用">安装与使用：
+&lt;/h2>&lt;h3 id="第一步安装">第一步：安装
+&lt;/h3>&lt;p>如果是国内VPS，务必需要先执行这一行命令，修改一下host&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> -e &lt;span class="s2">&amp;#34;185.199.111.154 github.githubassets.com\\n140.82.113.22 central.github.com\\n185.199.108.133 desktop.githubusercontent.com\\n185.199.109.133 camo.githubusercontent.com\\n185.199.109.133 github.map.fastly.net\\n151.101.193.194 github.global.ssl.fastly.net\\n140.82.116.3 gist.github.com\\n185.199.110.153 github.io\\n140.82.116.4 github.com\\n140.82.116.5 api.github.com\\n185.199.110.133 raw.githubusercontent.com\\n185.199.110.133 user-images.githubusercontent.com\\n185.199.110.133 favicons.githubusercontent.com\\n185.199.109.133 avatars5.githubusercontent.com\\n185.199.110.133 avatars4.githubusercontent.com\\n185.199.108.133 avatars3.githubusercontent.com\\n185.199.108.133 avatars2.githubusercontent.com\\n185.199.109.133 avatars1.githubusercontent.com\\n185.199.111.133 avatars0.githubusercontent.com\\n185.199.111.133 avatars.githubusercontent.com\\n140.82.116.10 codeload.github.com\\n52.217.229.201 github-cloud.s3.amazonaws.com\\n52.216.185.51 github-com\\n.s3.amazonaws.com\\n52.217.225.81 github-production-release-asset-2e65be.s3.amazonaws.com\\n52.217.120.41 github-production-user-asset-6210df.s3.amazonaws.com\\n3.5.28.232 github-production-repository-file-5c1aeb.s3.amazonaws.com\\n185.199.111.153 githubstatus.com\\n185.199.109.133 media.githubusercontent.com\\n185.199.108.133 objects.githubusercontent.com\\n185.199.109.133 raw.github.com\\n138.91.182.224 copilot-proxy.githubusercontent.com&amp;#34;&lt;/span> &amp;gt; /etc/hosts
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装必要软件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt install -y cron curl socat openssl git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>通过git下载acme.sh包&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone &amp;lt;https://github.com/acmesh-official/acme.sh.git&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>进入安装目录&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ./acme.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行安装&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">./acme.sh --install &lt;span class="c1"># 不添加 -m 参数可以直接无邮箱安装（推荐）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./acme.sh --install -m myemail@example.com &lt;span class="c1"># 添加 -m 参数带邮箱注册安装（谷歌CA必需）&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>重启终端以启用命令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> ~/.bashrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>启用脚本自动更新&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">acme.sh --upgrade --auto-upgrade
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="第二部配置">第二部：配置
+&lt;/h3>&lt;p>&lt;strong>证书颁发机构配置&lt;/strong>&lt;/p>
+&lt;p>&lt;em>&lt;a class="link" href="http://acme.sh" target="_blank" rel="noopener"
+>acme.sh&lt;/a> 刚下载好之后默认的证书颁发机构为ZeroSSL，如果希望使用此机构那么不用做修改&lt;/em>&lt;/p>
+&lt;p>将默认证书颁发机构改为&lt;strong>Let&amp;rsquo;s Encrypt&lt;/strong>与&lt;strong>Google Public CA的命令如下&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">acme.sh --set-default-ca --server letsencrypt &lt;span class="c1">#将默认的证书颁发机构改成**Let&amp;#39;s Encrypt**&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">acme.sh --set-default-ca --server google &lt;span class="c1">#将默认的证书颁发机构改成**Google Public CA**&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>证书颁发机构账号认证配置&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Let&amp;rsquo;s Encrypt&lt;/strong>无需账号配置，不需要邮箱或者密钥认证&lt;/li>
+&lt;li>&lt;strong>ZeroSSL&lt;/strong>账号配置*（推荐我的这种方式，尽量不要用邮箱）;* ps:需要先到ZeroSSL官网中注册账户，并在Developer中创建EAB Credentials for ACME Clients&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">acme.sh --register-account --server zerossl &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--eab-kid xxxxxxxxxxxx &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--eab-hmac-key xxxxxxxxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Google Public CA&lt;/strong>账号配置&lt;/p>
+&lt;p>1)需要先拥有一个Google Cloud Platform（GCP）账号，然后进入控制台左上角新建/选择一个项目&lt;/p>
+&lt;p>2)在顶部搜索栏搜索并进入Public Certificate Authority API 之后点击启用&lt;/p>
+&lt;p>3)再之后点击右上角shell图标进入Cloud Shell使用以下命令获取 EAB 密钥 ID 和 HMAC&lt;/p>
+&lt;p>4)谷歌EAB密钥使用一次/七天后自动失效，所以每次申请证书的时候都要来获取一次密钥，但续费不用&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">gcloud config &lt;span class="nb">set&lt;/span> project projectID &lt;span class="c1">#进入项目设置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gcloud publicca external-account-keys create &lt;span class="c1">#申请密钥&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 5&lt;span class="o">)&lt;/span>在acme.sh中设置gcp账号和项目密钥
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>eab-kid是[申请到的 keyId]，eab-hmac-key是[申请到的 b64MacKey]&lt;/p>
+&lt;p>邮箱可以随意写，但是每一个邮箱代表一个acme.sh账户，谷歌每一个项目只能认证100个此账户&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">acme.sh --register-account -m myemail@example.com --server google &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--eab-kid xxxxxxx &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--eab-hmac-key xxxxxxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="第三部申请证书">第三部：申请证书
+&lt;/h3>&lt;p>申请证书为了方便全都使用dns令牌的方式，以在cloudflare做dns为例&lt;/p>
+&lt;p>可以把dns令牌写入 &lt;code>~/.acme.sh/account.conf&lt;/code>,但我推荐以下方式&lt;/p>
+&lt;p>其他常见dns供应商配置，参见笔记末尾表格&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">CF_Token&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;your cf token&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>申请证书（通配符证书）&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>acme.sh&lt;span class="o">](&lt;/span>&amp;lt;http://acme.sh/&amp;gt;&lt;span class="o">)&lt;/span> --issue --dns dns_cf &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-d *.example.com &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-d example.com &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--keylength ec-256
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>申请证书（单个二级域名证书）&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>acme.sh&lt;span class="o">](&lt;/span>&amp;lt;http://acme.sh/&amp;gt;&lt;span class="o">)&lt;/span> --issue --dns dns_cf &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-d exp&lt;span class="o">[&lt;/span>.example.com&lt;span class="o">](&lt;/span>&amp;lt;http://api.example.com/&amp;gt;&lt;span class="o">)&lt;/span> &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--keylength ec-256
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="第四步安装证书并部署">第四步：安装证书并部署
+&lt;/h3>&lt;p>默认情况下证书存放在 ~/.acme.sh/example.com/目录下&lt;/p>
+&lt;p>申请好证书以后就该安装证书了，我一般用nginx反向代理使用证书，就以nginx为例&lt;/p>
+&lt;p>使用以下命令将证书与密钥安装到指定目录（sslFile是我自己在nginx目录下创建的）：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">acme.sh --install-cert -d *.example.com --ecc &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--key-file /etc/nginx/sslFile/example.com/example.key &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--fullchain-file /etc/nginx/sslFile/example.com/fullchain.cer &lt;span class="se">\\&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--reloadcmd &lt;span class="s2">&amp;#34;systemctl reload nginx&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="番外步疑难杂症">番外步：疑难杂症
+&lt;/h3>&lt;p>如果在通过EAB密钥认证账户或者申请证书的时候遇到了这些报错：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Please refer to &amp;lt;https://curl.haxx.se/libcurl/c/libcurl-errors.html&amp;gt; &lt;span class="k">for&lt;/span> error code: &lt;span class="m">28&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please refer to &amp;lt;https://curl.haxx.se/libcurl/c/libcurl-errors.html&amp;gt; &lt;span class="k">for&lt;/span> error code: &lt;span class="m">35&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>那么使用以下命令调试一下，这可能是vps的问题，需要修复&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看当前 MTU&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ip link show
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 临时设置较小 MTU&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo ip link &lt;span class="nb">set&lt;/span> dev eth0 mtu &lt;span class="m">1400&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 测试是否解决&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">curl -vI &amp;lt;https://acme.zerossl.com/v2/DV90&amp;gt; --tlsv1.2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果你的证书需要用在CDN平台或者其他的非本地服务的平台，比如国内的七牛云CDN那么可以使用acme.sh的官方远程部署脚本：deployhooks。 &lt;a class="link" href="https://github.com/acmesh-official/acme.sh/wiki/deployhooks" target="_blank" rel="noopener"
+>具体操作参见官方文档&lt;/a>&lt;/p>
+&lt;h3 id="一些acmesh常用的命令">一些acme.sh常用的命令：
+&lt;/h3>&lt;p>手动强制更新证书&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">acme.sh --renew -d example.com -d *.example.com --force --ecc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">acme.sh --renew -d example.com -d *.example.com --force //非ECC证书使用此命令
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查询域名申请证书的信息&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">acme.sh --list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>主要命令参数列表&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">-d ：后面跟的是域名凡是需要写域名的地方，之前一定要写这个参数
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--help 或 -h ：显示帮助信息
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--version 或 -v ：显示版本信息
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--upgrade ：检查更新
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--list ：列出证书
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--set-default-ca --server：设置默认的证书颁发机构
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--server ：单次申请设置证书颁发机构
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--issue ：申请证书
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--renew 或 -r ：更新证书
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--use-wget ：使用wget代替curl获取证书（不常用，当你正常申请证书出现error code:35的时候用）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--revoke ：吊销证书
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--remove ：删除证书
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--install-cert ：安装证书
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">--uninstall ：卸载acme.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="常见dns供应商-配置">常见DNS供应商 配置
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>机构&lt;/th>
+&lt;th>dns参数&lt;/th>
+&lt;th>token令牌命令（必须在申请证书之前操作）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>Cloudflare&lt;/strong>&lt;/td>
+&lt;td>dns_cf&lt;/td>
+&lt;td>CF_Token=&amp;ldquo;your cf token&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>腾讯云&lt;/td>
+&lt;td>dns_dp&lt;/td>
+&lt;td>export DP_Id=&amp;ldquo;123456&amp;rdquo;&lt;br />export DP_Key=&amp;ldquo;abcdef&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>阿里云&lt;/td>
+&lt;td>dns_ali&lt;/td>
+&lt;td>export Ali_Key=&amp;ldquo;123456&amp;rdquo;&lt;br />export Ali_Secret=&amp;ldquo;abcdef&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>华为云&lt;/td>
+&lt;td>dns_huawei&lt;/td>
+&lt;td>export HUAWEICLOUD_Username=&amp;quot;&lt;Your IAM Username>&amp;quot;&lt;br />export HUAWEICLOUD_Password=&amp;quot;&lt;Your Password>&amp;quot;&lt;br />export HUAWEICLOUD_DomainName=&amp;quot;&lt;Your DomainName>&amp;quot;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GoDaddy&lt;/td>
+&lt;td>dns_gd&lt;/td>
+&lt;td>export GD_Key=&amp;quot;&lt;key>&amp;quot;&lt;br />export GD_Secret=&amp;quot;&lt;secret>&amp;quot;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>DigitalOcean&lt;/td>
+&lt;td>dns_dgon&lt;/td>
+&lt;td>export DO_API_KEY=&amp;quot;&lt;key>”&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>netcup&lt;/td>
+&lt;td>dns_netcup&lt;/td>
+&lt;td>export NC_Apikey=&amp;quot;&lt;Apikey>&amp;quot;&lt;br />export NC_Apipw=&amp;quot;&lt;Apipassword>&amp;quot;&lt;br />export NC_CID=&amp;quot;&lt;Customernumber>”&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Vultr DNS&lt;/td>
+&lt;td>dns_vultr&lt;/td>
+&lt;td>export VULTR_API_KEY=&amp;quot;&lt;Your API key>&amp;quot;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AWS Route53&lt;/td>
+&lt;td>dns_aws&lt;/td>
+&lt;td>export AWS_ACCESS_KEY_ID=&amp;quot;&lt;key id>&amp;quot;&lt;br />export AWS_SECRET_ACCESS_KEY=&amp;quot;&lt;secret>&amp;quot;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Google Cloud DNS&lt;/td>
+&lt;td>dns_gcloud&lt;/td>
+&lt;td>export CLOUDSDK_ACTIVE_CONFIG_NAME=default&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Namecheap&lt;/td>
+&lt;td>dns_namecheap&lt;/td>
+&lt;td>export NAMECHEAP_USERNAME=&amp;quot;&amp;hellip;&amp;quot;&lt;br />export NAMECHEAP_API_KEY=&amp;quot;&amp;hellip;&amp;quot;&lt;br />export NAMECHEAP_SOURCEIP=&amp;quot;&amp;hellip;&amp;quot; &lt;em># 必须添加&lt;/em>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hurricane Electric&lt;/td>
+&lt;td>dns_he&lt;/td>
+&lt;td>export HE_Username=&amp;quot;&lt;yourusername>&amp;quot;&lt;br />export HE_Password=&amp;quot;&lt;password>&amp;quot;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Porkbun&lt;/td>
+&lt;td>dns_porkbun&lt;/td>
+&lt;td>export PORKBUN_API_KEY=&amp;quot;&amp;hellip;&amp;quot;&lt;br />export PORKBUN_SECRET_API_KEY=&amp;quot;&amp;hellip;&amp;quot;&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>服务器初始化设置</title><link>https://tencentx.us.kg/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE/</link><pubDate>Sat, 16 Aug 2025 02:45:00 +0000</pubDate><guid>https://tencentx.us.kg/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE/</guid><description>&lt;img src="https://tencentx.us.kg/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE/cover.jpeg" alt="Featured image of post 服务器初始化设置" />&lt;h1 id="服务器初始化设置">服务器初始化设置
+&lt;/h1>&lt;p>&lt;strong>注意：基本上机遇Debian12&lt;/strong>&lt;/p>
+&lt;h3 id="dd系统">DD系统
+&lt;/h3>&lt;p>在购买到一台全新的vps之后，一般情况下 要DD系统，这里使用一键DD&lt;/p>
+&lt;p>一键DD原项目仓库地址：&lt;a class="link" href="https://github.com/leitbogioro/Tools" target="_blank" rel="noopener"
+>Tools&lt;/a>&lt;/p>
+&lt;p>安装wget&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">apt install wget sudo -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>下载脚本&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wget --no-check-certificate -qO InstallNET.sh &lt;span class="s1">&amp;#39;&amp;lt;https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh&amp;gt;&amp;#39;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> chmod a+x InstallNET.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 国内vps使用这条命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wget --no-check-certificate -qO InstallNET.sh &lt;span class="s1">&amp;#39;&amp;lt;https://gitee.com/mb9e8j2/Tools/raw/master/Linux_reinstall/InstallNET.sh&amp;gt;&amp;#39;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> chmod a+x InstallNET.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行DD&lt;/p>
+&lt;p>要选择与自己的操作系统对应的命令，以下五条命令都是常用的系统服务器使用该脚本的DD命令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 1&amp;gt; Debian12&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo bash InstallNET.sh -debian
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 2&amp;gt; Kali Rolling&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo bash InstallNET.sh -kali
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 3&amp;gt; Alpine Linux Edge&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo bash InstallNET.sh -alpine
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 4&amp;gt; CentOS 9 stream&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo bash InstallNET.sh -centos
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 5&amp;gt; Ubuntu 22.04&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo bash InstallNET.sh -ubuntu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>脚本执行后在终端输入以下指令执行重启会自动安装系&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>DD系统后会生成默认的用户名与密码，DD系统后应该首先修改默认密码&lt;/p>
+&lt;p>用户名与密码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">默认用户名：root
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">默认密码：LeitboGi0ro
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果DD系统后主机名是ip地址想要更换那么编辑以下内容更换为你想要的即可&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">nvim /etc/hostname
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="默认连接设置">默认连接设置
+&lt;/h3>&lt;p>&lt;strong>出于安全考虑，应该首先更改默认的ssh连接配置&lt;/strong>&lt;/p>
+&lt;p>使用以下命令编辑ssh配置文件修改默认ssh连接端口&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nvim /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>编辑Port 为自己想要使用的端口默认为：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Port &lt;span class="m">22&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>重启ssh服务&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo systemctl restart ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
