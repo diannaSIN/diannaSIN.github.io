@@ -1,6 +1,6 @@
 # Change baseurl before deploy
 baseurl = "https://tencentx.us.kg"
-languageCode = "en"
+languageCode = "zh-Hans"
 title = "wdnmlgbd笔记/博客"
 
 # Theme i18n support
@@ -12,7 +12,7 @@ defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 
 # Change it to your Disqus shortname before using
-disqusShortname = "hugo-theme-stack"
+disqusShortname = "wdnmlgbd"
 
 [pagination]
 pagerSize = 5
