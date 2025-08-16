@@ -4,7 +4,7 @@ menu:
     main:
         weight: 5
         params: 
-            icon: brilliance.svg
+            icon: brilliance
 ---
 # 严禁将本站转发至国内平台
 
