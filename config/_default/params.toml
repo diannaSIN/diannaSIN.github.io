@@ -74,9 +74,10 @@ enabled = true
 [imageProcessing.content]
 enabled = true
 
+##评论相关 
 ## Comments
 [comments]
-enabled = true
+enabled = false
 provider = "disqus"
 
 [comments.disqusjs]
