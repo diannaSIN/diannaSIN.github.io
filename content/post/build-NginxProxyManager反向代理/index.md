@@ -3,7 +3,7 @@ title: Nginx Proxy Manager反向代理
 description: 一个图形化界面的Nginx反向代理工具
 #slug: hello-world
 date: 2025-08-16 03:01:00+0000
-#image: cover.jpg
+image: cover.jpg
 categories:
     - 网站相关
 tags:

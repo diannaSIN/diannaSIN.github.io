@@ -3,7 +3,7 @@ title: 服务器初始化设置
 description: 刚买的服务器刚开机的一些必要设置
 #slug: hello-world
 date: 2025-08-16 02:45:00+0000
-#image: cover.jpg
+image: cover.jpeg
 categories:
     - VPS配置
 tags:
