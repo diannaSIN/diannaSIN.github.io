@@ -1,7 +1,7 @@
 ---
 title: 3-XUI搭建节点
 description: 利用3-XUI搭建Vless Reality节点
-#slug: hello-world
+slug: vlessbuild1
 date: 2025-08-16 20:05:00+0000
 image: cover.png
 categories:
