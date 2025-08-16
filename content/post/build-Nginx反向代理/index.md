@@ -5,11 +5,11 @@ description: 简单的利用Nginx配置反向代理
 date: 2025-08-16 02:59:00+0000
 #image: cover.jpg
 categories:
+    - 网站相关
+tags:
     - web服务器
     - 反向代理
     - Nginx
-tags:
-    - 网站相关
 #weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 

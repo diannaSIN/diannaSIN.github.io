@@ -6,9 +6,9 @@ date: 2025-08-16 02:45:00+0000
 #image: cover.jpg
 categories:
     - VPS配置
-    - 服务器相关
 tags:
     - VPS配置
+    - 服务器相关    
 #weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 
