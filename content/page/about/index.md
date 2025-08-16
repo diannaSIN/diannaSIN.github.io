@@ -4,7 +4,7 @@ menu:
     main:
         weight: 5
         params: 
-            icon: http://www.w3.org/2000/svg
+            icon: brilliance.svg
 ---
 # 严禁将本站转发至国内平台
 
