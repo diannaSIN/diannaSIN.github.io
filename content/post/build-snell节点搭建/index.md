@@ -2,12 +2,16 @@
 title: snell节点搭建
 description: 在你的vps中搭建snell节点
 #slug: snellbuild1
-date: 2025-08-16 18:05:00+0000
+date: 2025-08-16T18:05:00+08:00
 #image: cover.jpeg
 categories:
+    - 魔法制作
     - VPS配置
 tags:
+    - 魔法上网
     - VPS配置
+    - 节点搭建
+    - 服务器相关
 #weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 
