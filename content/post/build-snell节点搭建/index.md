@@ -3,7 +3,7 @@ title: snell节点搭建
 description: 在你的vps中搭建snell节点
 #slug: hello-world
 date: 2025-08-16 18:05:00+0000
-image: cover.jpg
+image: cover.jpeg
 categories:
     - 魔法制作
 tags:
