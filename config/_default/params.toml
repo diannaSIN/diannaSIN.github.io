@@ -77,7 +77,7 @@ enabled = true
 ##评论相关 
 ## Comments
 [comments]
-enabled = true
+enabled = false
 provider = "waline"
 
 [comments.disqusjs]
