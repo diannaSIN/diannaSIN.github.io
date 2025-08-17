@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VPS面板 on wdnmlgbd笔记/博客</title><link>https://tencentx.us.kg/tags/vps%E9%9D%A2%E6%9D%BF/</link><description>Recent content in VPS面板 on wdnmlgbd笔记/博客</description><generator>Hugo -- gohugo.io</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Aug 2025 20:05:00 +0800</lastBuildDate><atom:link href="https://tencentx.us.kg/tags/vps%E9%9D%A2%E6%9D%BF/index.xml" rel="self" type="application/rss+xml"/><item><title>1panel搭建与配置</title><link>https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Sun, 17 Aug 2025 20:05:00 +0800</pubDate><guid>https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/cover.jpeg" alt="Featured image of post 1panel搭建与配置" />&lt;h1 id="1panel搭建与配置">1panel搭建与配置
+&lt;/h1>&lt;blockquote>
+&lt;p>1panel是一个linux服务器运维管理面板&lt;/p>&lt;/blockquote>
+&lt;h4 id="安装">安装
+&lt;/h4>&lt;p>&lt;strong>在你的VPS中执行以下安装脚本，根据命令提示完成1panel的安装&lt;/strong>（国际版1panel，推荐）：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">curl -sSL https://resource.1panel.pro/quick_start.sh -o quick_start.sh &amp;amp;&amp;amp; bash quick_start.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果你的服务器是在国内或者想要使用国内版1panel使用以下命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">bash -c &amp;#34;$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装完成以后在网页中进入你的1panel管理面板，地址为：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">http://目标服务器 IP 地址:目标端口/安全入口
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="配置">配置
+&lt;/h4>&lt;h5 id="1-docker存储目录迁移在此之前尽量先不要执行任何其他的操作不要安装任何容器">1. Docker存储目录迁移(在此之前尽量先不要执行任何其他的操作，不要安装任何容器)
+&lt;/h5>&lt;blockquote>
+&lt;p>因为默认安装后docker的存储目录非常小，如果要安装大量容器或者容器可能产生大量数据的情况下就需要迁移Docker容器的目录&lt;/p>&lt;/blockquote>
+&lt;p>第一步停止docker：&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-1.png"
+width="1439"
+height="899"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-1_hu_bc95b352a2c88850.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-1_hu_f1356aa89618788f.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="384px"
+>&lt;/p>
+&lt;p>第二步：首先找到Docker默认的存储目录，并且将它删除&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-2.png"
+width="1439"
+height="899"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-2_hu_9c5eada5e4b05268.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-2_hu_5ef089cd1fd4cd60.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="384px"
+>&lt;/p>
+&lt;p>第三步：在根目录创建Docker存储目录&lt;/p>
+&lt;p>在vps终端执行以下命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">mkdir -p /docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>或者直接在1panel的根目录创建：&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-3.png"
+width="1439"
+height="899"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-3_hu_9d332c4b322cd473.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-3_hu_46f9ab201c528d0c.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="384px"
+>&lt;/p>
+&lt;p>第四步:在Docker的配置中添加如下代码将存储目录指向你刚刚创建的目录，并执行重启&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">{
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;data-root&amp;#34;: &amp;#34;/docker&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-4.png"
+width="1439"
+height="899"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-4_hu_14e44db51da25aa0.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/docker-4_hu_3e9c6a489d76a560.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="384px"
+>&lt;/p>
+&lt;blockquote>
+&lt;p>至此Docker的目录就已经迁移完成了&lt;/p>&lt;/blockquote>
+&lt;h5 id="2安装第三方库">2.安装第三方库
+&lt;/h5>&lt;blockquote>
+&lt;p>由于1panel面板的docker不能直接使用docker-compose、缺少部分有趣/实用的应用容器等，我们需要安装第三方应用库&lt;/p>&lt;/blockquote>
+&lt;p>前提：现在你的终端安装git&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">sudo apt install git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>默认&lt;code>1Panel&lt;/code>安装在&lt;code>/opt/&lt;/code>路径下，如果你不是安装在这个目录，那需要你自己更改一下命令中的路径&lt;/p>
+&lt;p>在你的VPS终端，或者1panel中的系统&amp;ndash;&amp;gt;终端中，依次执行以下命令，安装第三方应用库&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git clone -b localApps https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>如果你是国内网络或、国内VPS那么选择以下命令执行&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git clone -b localApps https://ghp.ci/https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后在终端执行以下更新软件库命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">curl -sSL https://install.lifebus.top/auto_install.sh | bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>接着在这里就可以看到刚刚导入本地的应用库&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-1.png"
+width="1482"
+height="966"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-1_hu_7af810006ec1397c.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-1_hu_4c5cc662d4d39a35.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="153"
+data-flex-basis="368px"
+>&lt;/p>
+&lt;p>在本地应用中找到1Panel-Apps这个应用就可以使用docker-compose的方式安装应用了&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-2.png"
+width="1402"
+height="922"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-2_hu_7a6b7b20b9439cb2.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-2_hu_99c66d73beff8be9.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="152"
+data-flex-basis="364px"
+>&lt;/p>
+&lt;p>按照以下方式操作：&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-3.png"
+width="1387"
+height="950"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-3_hu_f05ef8e7de31335b.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-3_hu_b5e2c68c4af6543c.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="146"
+data-flex-basis="350px"
+>&lt;/p>
+&lt;p>下拉，在这里编辑docker-compose文件&lt;/p>
+&lt;p>&lt;img src="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-4.png"
+width="1387"
+height="950"
+srcset="https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-4_hu_dbcd501e5433b17b.png 480w, https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/panel-4_hu_29060ade10bbfddd.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="146"
+data-flex-basis="350px"
+>&lt;/p></description></item></channel></rss>
