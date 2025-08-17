@@ -114,6 +114,12 @@ cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/res
 rm -rf /opt/1panel/resource/apps/local/appstore-localApps
 ```
 
+然后在终端执行以下更新软件库命令：
+
+```
+curl -sSL https://install.lifebus.top/auto_install.sh | bash
+```
+
 接着在这里就可以看到刚刚导入本地的应用库
 
 ![](panel-1.png)
