@@ -77,8 +77,8 @@ enabled = true
 ##评论相关 
 ## Comments
 [comments]
-enabled = false
-provider = "disqus"
+enabled = true
+provider = "waline"
 
 [comments.disqusjs]
 shortname = ""
@@ -106,7 +106,7 @@ clientSecret = ""
 autoCreateIssue = false
 
 [comments.waline]
-serverURL = ""
+serverURL = "https://commite.tencentx.us.kg"
 lang = ""
 visitor = ""
 avatar = ""
