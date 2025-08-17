@@ -30,22 +30,22 @@ sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
 导入官方密钥签名
 
 ```bash
-curl <https://nginx.org/keys/nginx_signing.key> | gpg --dearmor \\
+curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
     | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
 ```
 
 配置存储库
 
 ```bash
-echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \\
-<http://nginx.org/packages/debian> `lsb_release -cs` nginx" \\
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+http://nginx.org/packages/debian `lsb_release -cs` nginx" \
     | sudo tee /etc/apt/sources.list.d/nginx.list
 ```
 
 设置固定存储库
 
 ```bash
-echo -e "Package: *\\nPin: origin nginx.org\\nPin: release o=nginx\\nPin-Priority: 900\\n" \\
+echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" \
     | sudo tee /etc/apt/preferences.d/99nginx
 ```
 
@@ -123,7 +123,7 @@ server {
     
     # 主请求代理配置
     location / {
-        proxy_pass <http://127.0.0.1:3001>;   # 自定义后端服务地址
+        proxy_pass http://127.0.0.1:3001;   # 自定义后端服务地址
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -133,6 +133,7 @@ server {
         proxy_set_header Connection "upgrade";
     }
 }
+
 ```
 
 nginx常用命令

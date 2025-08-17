@@ -43,7 +43,7 @@ tags:
 如果是国内VPS，务必需要先执行这一行命令，修改一下host
 
 ```bash
-echo -e "185.199.111.154 github.githubassets.com\\n140.82.113.22 central.github.com\\n185.199.108.133 desktop.githubusercontent.com\\n185.199.109.133 camo.githubusercontent.com\\n185.199.109.133 github.map.fastly.net\\n151.101.193.194 github.global.ssl.fastly.net\\n140.82.116.3  gist.github.com\\n185.199.110.153 github.io\\n140.82.116.4  github.com\\n140.82.116.5  api.github.com\\n185.199.110.133 raw.githubusercontent.com\\n185.199.110.133 user-images.githubusercontent.com\\n185.199.110.133 favicons.githubusercontent.com\\n185.199.109.133 avatars5.githubusercontent.com\\n185.199.110.133 avatars4.githubusercontent.com\\n185.199.108.133 avatars3.githubusercontent.com\\n185.199.108.133 avatars2.githubusercontent.com\\n185.199.109.133 avatars1.githubusercontent.com\\n185.199.111.133 avatars0.githubusercontent.com\\n185.199.111.133 avatars.githubusercontent.com\\n140.82.116.10 codeload.github.com\\n52.217.229.201  github-cloud.s3.amazonaws.com\\n52.216.185.51 github-com\\n.s3.amazonaws.com\\n52.217.225.81 github-production-release-asset-2e65be.s3.amazonaws.com\\n52.217.120.41 github-production-user-asset-6210df.s3.amazonaws.com\\n3.5.28.232  github-production-repository-file-5c1aeb.s3.amazonaws.com\\n185.199.111.153 githubstatus.com\\n185.199.109.133 media.githubusercontent.com\\n185.199.108.133 objects.githubusercontent.com\\n185.199.109.133 raw.github.com\\n138.91.182.224  copilot-proxy.githubusercontent.com" > /etc/hosts
+echo -e "185.199.111.154 github.githubassets.com\n140.82.113.22 central.github.com\n185.199.108.133 desktop.githubusercontent.com\n185.199.109.133 camo.githubusercontent.com\n185.199.109.133 github.map.fastly.net\n151.101.193.194 github.global.ssl.fastly.net\n140.82.116.3  gist.github.com\n185.199.110.153 github.io\n140.82.116.4  github.com\n140.82.116.5  api.github.com\n185.199.110.133 raw.githubusercontent.com\n185.199.110.133 user-images.githubusercontent.com\n185.199.110.133 favicons.githubusercontent.com\n185.199.109.133 avatars5.githubusercontent.com\n185.199.110.133 avatars4.githubusercontent.com\n185.199.108.133 avatars3.githubusercontent.com\n185.199.108.133 avatars2.githubusercontent.com\n185.199.109.133 avatars1.githubusercontent.com\n185.199.111.133 avatars0.githubusercontent.com\n185.199.111.133 avatars.githubusercontent.com\n140.82.116.10 codeload.github.com\n52.217.229.201  github-cloud.s3.amazonaws.com\n52.216.185.51 github-com\n.s3.amazonaws.com\n52.217.225.81 github-production-release-asset-2e65be.s3.amazonaws.com\n52.217.120.41 github-production-user-asset-6210df.s3.amazonaws.com\n3.5.28.232  github-production-repository-file-5c1aeb.s3.amazonaws.com\n185.199.111.153 githubstatus.com\n185.199.109.133 media.githubusercontent.com\n185.199.108.133 objects.githubusercontent.com\n185.199.109.133 raw.github.com\n138.91.182.224  copilot-proxy.githubusercontent.com" > /etc/hosts
 ```
 
 安装必要软件
@@ -55,7 +55,7 @@ sudo apt install -y cron curl socat openssl git
 通过git下载acme.sh包
 
 ```bash
-git clone <https://github.com/acmesh-official/acme.sh.git>
+git clone https://github.com/acmesh-official/acme.sh.git
 ```
 
 进入安装目录
@@ -102,8 +102,8 @@ acme.sh --set-default-ca --server google       #将默认的证书颁发机构�
 2. **ZeroSSL**账号配置*（推荐我的这种方式，尽量不要用邮箱）;* ps:需要先到ZeroSSL官网中注册账户，并在Developer中创建EAB Credentials for ACME Clients
 
 ```bash
-acme.sh --register-account --server zerossl \\
---eab-kid xxxxxxxxxxxx \\
+acme.sh --register-account --server zerossl \
+--eab-kid xxxxxxxxxxxx \
 --eab-hmac-key xxxxxxxxx
 ```
 
@@ -120,16 +120,17 @@ acme.sh --register-account --server zerossl \\
 ```bash
 gcloud config set project projectID           #进入项目设置
 gcloud publicca external-account-keys create  #申请密钥
-  5)在acme.sh中设置gcp账号和项目密钥
 ```
+
+5)在acme.sh中设置gcp账号和项目密钥
 
 eab-kid是[申请到的 keyId]，eab-hmac-key是[申请到的 b64MacKey]
 
 邮箱可以随意写，但是每一个邮箱代表一个acme.sh账户，谷歌每一个项目只能认证100个此账户
 
 ```bash
-acme.sh --register-account -m myemail@example.com --server google \\
---eab-kid xxxxxxx \\
+acme.sh --register-account -m myemail@example.com --server google \
+--eab-kid xxxxxxx \
 --eab-hmac-key xxxxxxx
 ```
 
@@ -148,17 +149,17 @@ export CF_Token="your cf token"
 申请证书（通配符证书）
 
 ```bash
-[acme.sh](<http://acme.sh/>) --issue --dns dns_cf \\
--d *.example.com \\
--d example.com \\
+acme.sh --issue --dns dns_cf \
+-d *.example.com \
+-d example.com \
 --keylength ec-256
 ```
 
 申请证书（单个二级域名证书）
 
 ```bash
-[acme.sh](<http://acme.sh/>) --issue --dns dns_cf \\
--d exp[.example.com](<http://api.example.com/>) \\
+acme.sh --issue --dns dns_cf \
+-d exp.example.com \
 --keylength ec-256
 ```
 
@@ -171,9 +172,9 @@ export CF_Token="your cf token"
 使用以下命令将证书与密钥安装到指定目录（sslFile是我自己在nginx目录下创建的）：
 
 ```bash
-acme.sh --install-cert -d *.example.com --ecc \\
---key-file /etc/nginx/sslFile/example.com/example.key \\
---fullchain-file /etc/nginx/sslFile/example.com/fullchain.cer \\
+acme.sh --install-cert -d *.example.com --ecc \
+--key-file /etc/nginx/sslFile/example.com/example.key \
+--fullchain-file /etc/nginx/sslFile/example.com/fullchain.cer \
 --reloadcmd "systemctl reload nginx"
 ```
 
@@ -182,8 +183,8 @@ acme.sh --install-cert -d *.example.com --ecc \\
 如果在通过EAB密钥认证账户或者申请证书的时候遇到了这些报错：
 
 ```bash
-Please refer to <https://curl.haxx.se/libcurl/c/libcurl-errors.html> for error code: 28
-Please refer to <https://curl.haxx.se/libcurl/c/libcurl-errors.html> for error code: 35
+Please refer to https://curl.haxx.se/libcurl/c/libcurl-errors.html for error code: 28
+Please refer to https://curl.haxx.se/libcurl/c/libcurl-errors.html for error code: 35
 ```
 
 那么使用以下命令调试一下，这可能是vps的问题，需要修复
@@ -194,7 +195,7 @@ ip link show
 # 临时设置较小 MTU
 sudo ip link set dev eth0 mtu 1400
 # 测试是否解决
-curl -vI <https://acme.zerossl.com/v2/DV90> --tlsv1.2
+curl -vI https://acme.zerossl.com/v2/DV90 --tlsv1.2
 ```
 
 如果你的证书需要用在CDN平台或者其他的非本地服务的平台，比如国内的七牛云CDN那么可以使用acme.sh的官方远程部署脚本：deployhooks。 [具体操作参见官方文档](https://github.com/acmesh-official/acme.sh/wiki/deployhooks)
