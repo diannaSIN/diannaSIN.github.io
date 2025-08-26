@@ -31,9 +31,9 @@ apt install wget sudo -y
 下载脚本
 
 ```bash
-wget --no-check-certificate -qO InstallNET.sh '<https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh>' && chmod a+x InstallNET.sh
+wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh
 # 国内vps使用这条命令
-wget --no-check-certificate -qO InstallNET.sh '<https://gitee.com/mb9e8j2/Tools/raw/master/Linux_reinstall/InstallNET.sh>' && chmod a+x InstallNET.sh
+wget --no-check-certificate -qO InstallNET.sh 'https://gitee.com/mb9e8j2/Tools/raw/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh
 ```
 
 执行DD
