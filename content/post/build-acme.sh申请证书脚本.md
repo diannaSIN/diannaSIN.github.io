@@ -3,7 +3,7 @@ title: acme.sh申请证书脚本
 description: 利用acme.sh申请公益的免费证书
 #slug: hello-world
 date: 2025-08-16 02:57:00+0000
-image: cover.png
+image: https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011511585.png
 categories:
     - 网站相关
 tags:

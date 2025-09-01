@@ -3,7 +3,7 @@ title: snell节点搭建
 description: 在你的vps中搭建snell节点
 #slug: snellbuild1
 date: 2025-08-16T18:05:00+08:00
-image: cover.jpeg
+image: https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011713034.jpeg
 categories:
     - 魔法制作
     - VPS配置

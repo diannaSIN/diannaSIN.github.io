@@ -3,7 +3,7 @@ title: 3-XUI搭建节点
 description: 利用3-XUI搭建Vless Reality节点
 slug: vlessbuild1
 date: 2025-08-16T20:05:00+08:00
-image: cover.png
+image: https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011807426.png
 categories:
     - 魔法制作
     - VPS配置
@@ -75,25 +75,25 @@ vpsip:端口号/面板路径
 
 **输入第一步中配置的用户名和密码**
 
-![log](log.png)
+![log](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011828400.png)
 
 **可以在这里重新设置你的X-UI的端口和面板**
 
-![set](set.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011858565.png)
 
 **点击添加入站**
 
-![build1](build1.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011921879.png)
 
 **然后按照下图直接配置就可以**
 
 把图二中客户ID中第一个 ‘-’ 前面的自负复制到图三中Dest(Target)中的.com前面去替换掉原来的字符
 
-![build2](build2.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011943116.png)
 
-![build3](build3.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011954345.png)
 
-![build4](build4.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012024269.png)
 
 > 节点这就搭建好了
 

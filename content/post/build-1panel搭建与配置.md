@@ -3,7 +3,7 @@ title: 1panel搭建与配置
 description: 一个图形化界面的Nginx反向代理工具
 #slug: hello-world
 date: 2025-08-17T20:05:00+08:00
-image: cover.jpeg
+image: https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012055586.jpeg
 categories:
     - VPS配置
 tags:
@@ -44,11 +44,11 @@ http://目标服务器 IP 地址:目标端口/安全入口
 
 第一步停止docker：
 
-![](docker-1.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012113770.png)
 
 第二步：首先找到Docker默认的存储目录，并且将它删除
 
-![](docker-2.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012127670.png)
 
 第三步：在根目录创建Docker存储目录
 
@@ -60,7 +60,7 @@ mkdir -p /docker
 
 或者直接在1panel的根目录创建：
 
-![](docker-3.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012145512.png)
 
 第四步:在Docker的配置中添加如下代码将存储目录指向你刚刚创建的目录，并执行重启
 
@@ -70,7 +70,7 @@ mkdir -p /docker
 }
 ```
 
-![](docker-4.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012205178.png)
 
 > 至此Docker的目录就已经迁移完成了
 
@@ -122,16 +122,16 @@ curl -sSL https://install.lifebus.top/auto_install.sh | bash
 
 接着在这里就可以看到刚刚导入本地的应用库
 
-![](panel-1.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012225640.png)
 
 在本地应用中找到1Panel-Apps这个应用就可以使用docker-compose的方式安装应用了
 
-![](panel-2.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012242460.png)
 
 按照以下方式操作：
 
-![](panel-3.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012259895.png)
 
 下拉，在这里编辑docker-compose文件
 
-![](panel-4.png)
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012430893.png)

@@ -3,7 +3,7 @@ title: Nginx反向代理
 description: 简单的利用Nginx配置反向代理
 #slug: hello-world
 date: 2025-08-16 02:59:00+0000
-image: cover.jpg
+image: https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011617160.jpg
 categories:
     - 网站相关
 tags:
