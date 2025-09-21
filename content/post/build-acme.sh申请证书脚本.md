@@ -252,7 +252,7 @@ acme.sh --list
 | 机构               | dns参数       | token令牌命令（必须在申请证书之前操作）                      |
 | ------------------ | ------------- | ------------------------------------------------------------ |
 | **Cloudflare**     | dns_cf        | CF_Token="your cf token"                                     |
-| 腾讯云             | dns_dp        | export DP_Id="123456"<br />export DP_Key="abcdef"            |
+| 腾讯云             | dns_dp        | export Tencent_SecretId="<Your SecretId>"<br/>export Tencent_SecretKey="<Your SecretKey>" |
 | 阿里云             | dns_ali       | export Ali_Key="123456"<br />export Ali_Secret="abcdef"      |
 | 华为云             | dns_huawei    | export HUAWEICLOUD_Username="<Your IAM Username>"<br />export HUAWEICLOUD_Password="<Your Password>"<br />export HUAWEICLOUD_DomainName="<Your DomainName>" |
 | GoDaddy            | dns_gd        | export GD_Key="<key>"<br />export GD_Secret="<secret>"       |
