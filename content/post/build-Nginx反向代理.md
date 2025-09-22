@@ -125,7 +125,8 @@ server {
     location / {
         proxy_pass http://127.0.0.1:3001;   # 自定义后端服务地址
         proxy_http_version 1.1;
-        proxy_set_header Host $host;
+        proxy_set_header Host $host;						#代理本机服务的时候用这句，下面那句注释掉
+        #proxy_set_header Host $proxy_host;     #代理非本机服务如githubpages cfpages vercel等用这个上面那句注释掉
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
