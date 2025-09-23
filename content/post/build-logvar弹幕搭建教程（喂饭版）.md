@@ -21,7 +21,13 @@ tags:
 
 ### Docker安装
 
-依次执行以下命令，安装docker以及docker composeV2(就复制粘贴就行了 别干别的)
+**使用脚本直接安装（直接复制就行我也不解释脚本参数）**
+
+```
+curl -fsSL https://get.docker.com | bash -s
+```
+
+**如果你有洁癖想要手动安装那就依次执行以下命令，安装docker以及docker composeV2(就复制粘贴就行了 别干别的)**
 
 ```
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
