@@ -19,6 +19,8 @@ tags:
 
 目的：使用Docker搭建Logvar弹幕。
 
+## 通过Docker安装Logvar弹幕
+
 ### Docker安装
 
 **使用脚本直接安装（直接复制就行我也不解释脚本参数）**
@@ -141,3 +143,51 @@ http://VPSIP:9321/{上面compose文件里面TOKEN=后面的内容写在这里}
 ```
 
 如果需要自定义域名，可以查看本站的Nginx反向代理和acme.sh申请证书这两篇文章结合起来。将弹幕服务反向代理一下。
+
+## 通过ClawCloudRun部署Logvar弹幕
+
+提示：这个方法适用于之前活动注册clawrun账户的用户，因为有5美元的每月赠送金额，自己购买其实没有什么性价比，但是同样适用。
+
+我这里按照你已经注册了ClawCloundRun的情况，我直接讲怎么操作
+
+点击主界面的App Launchpad
+
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20250924000630657.png)
+
+然后点击右上角的Create App
+
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20250924000746294.png)
+
+进来之后按照我给你的格式来填写，就不用改了
+
+Application Name ： danmu-api
+
+Image Name ： logvar/danmu-api:latest
+
+Usage 中 选择Fixed， CPU选择 0.5 Memory选择1G（注意界面左边的总额，免费账户每月5美金也就是每天不能超过0.16的标准）
+
+Network中Container Port 填写 9321 Public Access 点击打开
+
+Environment Variables 点击右边的Add 填入TOKEN=你的token（这里是写环境变量的地方如果你需要填写bilibili的cookie也在这里写，一行一个环境变量）
+
+然后点击右上角的Deploy Application就可以了。 配置情况按照上面的配置见下两张图
+
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20250924001254485.png)
+
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20250924001304097.png)
+
+之后来到容器的Dashbord，当图示位置变成Active的时候就可以用了
+
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20250924001402317.png)
+
+Dashbord中的Public Address就是claw默认分配给你的域名，如果你想要使用自定义域名的话，点击Manage Network，在Network位置点击Custome Domain
+
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20250924001558530.png)
+
+在下图中，讲CNAME中的内容在你的DNS中比如CF中创建一条CNAME解析，并将上面那部分作为值写进去
+
+下面就写你自定义的域名
+
+![](https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20250924001702189.png)
+
+OK 使用Claw Cloud Run到此就创建完成了
