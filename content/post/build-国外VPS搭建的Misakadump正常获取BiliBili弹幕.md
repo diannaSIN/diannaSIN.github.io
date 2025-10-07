@@ -3,7 +3,7 @@ title: build-国外VPS搭建的Misakadump正常获取BiliBili弹幕
 description: 在你的vps中搭建snell节点
 #slug: snellbuild1
 date: 2025-10-08T18:00:00+08:00
-image: https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902011713034.jpeg
+image: https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage20251008012849943.png
 categories:
     - VPS配置
 tags:
