@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VPS面板 on wdnmlgbd笔记/博客</title><link>https://tencentx.us.kg/tags/vps%E9%9D%A2%E6%9D%BF/</link><description>Recent content in VPS面板 on wdnmlgbd笔记/博客</description><generator>Hugo -- gohugo.io</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Aug 2025 20:05:00 +0800</lastBuildDate><atom:link href="https://tencentx.us.kg/tags/vps%E9%9D%A2%E6%9D%BF/index.xml" rel="self" type="application/rss+xml"/><item><title>1panel搭建与配置</title><link>https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><pubDate>Sun, 17 Aug 2025 20:05:00 +0800</pubDate><guid>https://tencentx.us.kg/p/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid><description>&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012055586.jpeg" alt="Featured image of post 1panel搭建与配置" /&gt;&lt;h1 id="1panel搭建与配置"&gt;1panel搭建与配置
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;1panel是一个linux服务器运维管理面板&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h4 id="安装"&gt;安装
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;在你的VPS中执行以下安装脚本，根据命令提示完成1panel的安装&lt;/strong&gt;（国际版1panel，推荐）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -sSL https://resource.1panel.pro/quick_start.sh -o quick_start.sh &amp;amp;&amp;amp; bash quick_start.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果你的服务器是在国内或者想要使用国内版1panel使用以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bash -c &amp;#34;$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成以后在网页中进入你的1panel管理面板，地址为：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://目标服务器 IP 地址:目标端口/安全入口
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id="配置"&gt;配置
+&lt;/h4&gt;&lt;h5 id="1-docker存储目录迁移在此之前尽量先不要执行任何其他的操作不要安装任何容器"&gt;1. Docker存储目录迁移(在此之前尽量先不要执行任何其他的操作，不要安装任何容器)
+&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;因为默认安装后docker的存储目录非常小，如果要安装大量容器或者容器可能产生大量数据的情况下就需要迁移Docker容器的目录&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;第一步停止docker：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012113770.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;第二步：首先找到Docker默认的存储目录，并且将它删除&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012127670.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;第三步：在根目录创建Docker存储目录&lt;/p&gt;
+&lt;p&gt;在vps终端执行以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir -p /docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;或者直接在1panel的根目录创建：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012145512.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;第四步:在Docker的配置中添加如下代码将存储目录指向你刚刚创建的目录，并执行重启&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;data-root&amp;#34;: &amp;#34;/docker&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012205178.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;至此Docker的目录就已经迁移完成了&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h5 id="2安装第三方库"&gt;2.安装第三方库
+&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;由于1panel面板的docker不能直接使用docker-compose、缺少部分有趣/实用的应用容器等，我们需要安装第三方应用库&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;前提：现在你的终端安装git&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;默认&lt;code&gt;1Panel&lt;/code&gt;安装在&lt;code&gt;/opt/&lt;/code&gt;路径下，如果你不是安装在这个目录，那需要你自己更改一下命令中的路径&lt;/p&gt;
+&lt;p&gt;在你的VPS终端，或者1panel中的系统&amp;ndash;&amp;gt;终端中，依次执行以下命令，安装第三方应用库&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone -b localApps https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;如果你是国内网络或、国内VPS那么选择以下命令执行&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone -b localApps https://ghp.ci/https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后在终端执行以下更新软件库命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -sSL https://install.lifebus.top/auto_install.sh | bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接着在这里就可以看到刚刚导入本地的应用库&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012225640.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;在本地应用中找到1Panel-Apps这个应用就可以使用docker-compose的方式安装应用了&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012242460.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;按照以下方式操作：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012259895.png"
+loading="lazy"
+&gt;&lt;/p&gt;
+&lt;p&gt;下拉，在这里编辑docker-compose文件&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diannaSIN/blogImage/image/BlogImage/20250902012430893.png"
+loading="lazy"
+&gt;&lt;/p&gt;</description></item></channel></rss>
