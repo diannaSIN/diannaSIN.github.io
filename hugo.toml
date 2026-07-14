@@ -1,4 +1,17 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://www.wdnmlgbd.de/'
+title = 'wdnmlgbd'
 theme = "reimu"
+
+# 主题配置显示中文
+locale = 'zh-CN'
+defaultContentLanguage = 'zh-CN'
+[languages]
+[languages.zh-cn]
+label = '中文'
+weight = 1
+hasCJKLanguage = true
+
+# 确保主题的代码块可以正常显示
+[markup.highlight]
+guessSyntax = true
+noClasses = false

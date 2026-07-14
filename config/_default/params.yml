@@ -11,11 +11,14 @@ menu:
   - name: archives
     url: "archives"
     icon:
-  - name: about
-    url: "about"
+  - name: statement
+    url: "statement"
     icon:
   - name: friend
     url: "friend"
+    icon:
+  - name: aff
+    url: "aff"
     icon:
 
 mainSections: ["post"]
@@ -27,8 +30,8 @@ dateFormat: "2006-01-02"
 timeFormat: "2006-01-02 15:04:05"
 
 author: wdnmlgbd
-email: xxx@example.com
-description: "少女祈祷中..."
+email: mail@wdnmlgbd.de
+description: ""
 # subtitle: "少女祈祷中..."
 subtitle:
   typing:
@@ -47,9 +50,9 @@ subtitle:
     showCursor: true # 是否显示闪烁的字符
     cursorChar: "|" # 字符
     smartBackspace: false # 智能退格，只删除不同的部分
-  text: "少女祈祷中..." # 当 typing.enable = false 时使用
+  text: "wdnmlgbd正在努力给大家搬屎..." # 当 typing.enable = false 时使用
 
-banner: "images/banner.webp"
+banner: "images/banner.jpg"
 # You can also write it in the form of the following url
 # banner: "https://example.com"
 
@@ -102,10 +105,10 @@ copyright:
 #   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></div>
 
 footer:
-  since: 2020 # 2020-current year
-  powered: true
+  since: 2025 # 2020-current year
+  powered: false
   count: true
-  busuanzi: true
+  busuanzi: false
   icon:
     url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     rotate: true
@@ -257,11 +260,12 @@ local_font:
     - Consolas
     - monospace
 
+# 设置暗黑模式  默认为不开启
 dark_mode:
   # true means that the dark mode is enabled by default
   # false means that the dark mode is disabled by default
   # auto means that the dark mode is automatically switched according to the system settings
-  enable: auto # true | false | auto
+  enable: false # true | false | auto
 
 ########################################
 # Analytics
@@ -301,8 +305,8 @@ clipboard:
     ja: コピー失敗 (ﾟ⊿ﾟ)ﾂ
     pt-BR: Falha ao copiar (ﾟ⊿ﾟ)ﾂ
   copyright:
-    enable: false
-    count: 50 # The number of characters when the copyright is displayed
+    enable: false #是否开启复制按钮的版权声明提示
+    count: 50 # 大于多少子添加版权声明
     license_type: by-nc-sa # https://creativecommons.org/licenses
 
 math:
@@ -580,7 +584,7 @@ top:
 
 # whether to display the notification when the article is outdated
 outdate:
-  enable: false
+  enable: true
   daysAgo: 180 # The number of days after which the article is considered outdated
   message:
     en: This article was last updated on {time}. Please note that the content may no longer be applicable.
@@ -601,9 +605,9 @@ moe_icp:
 
 # Sponsor
 sponsor:
-  enable: false
+  enable: true
   tip:
-    zh-CN: 请作者喝杯咖啡吧
+    zh-CN: 请使用作者的aff链接吧
     zh-TW: 請作者喝杯咖啡吧
     en: Buy me a coffee
     ja: コーヒーを買ってください
