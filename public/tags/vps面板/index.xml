@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPS面板 on wdnmlgbd</title>
+    <link>http://localhost:1313/tags/vps%E9%9D%A2%E6%9D%BF/</link>
+    <description>Recent content from wdnmlgbd</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>mail@wdnmlgbd.de (wdnmlgbd)</managingEditor>
+    <webMaster>mail@wdnmlgbd.de (wdnmlgbd)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sun, 17 Aug 2025 20:05:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/vps%E9%9D%A2%E6%9D%BF/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>1panel搭建与配置</title>
+      <link>http://localhost:1313/post/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 17 Aug 2025 20:05:00 &#43;0800</pubDate>
+      <author>mail@wdnmlgbd.de (wdnmlgbd)</author>
+      <guid>http://localhost:1313/post/1panel%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+        <![CDATA[<h1>1panel搭建与配置</h1><p>作者：wdnmlgbd（mail@wdnmlgbd.de）</p>
+        
+          <h1 id="1panel搭建与配置">
+<a class="header-anchor" href="#1panel%e6%90%ad%e5%bb%ba%e4%b8%8e%e9%85%8d%e7%bd%ae"></a>
+1panel搭建与配置
+</h1><blockquote>
+<p>1panel是一个linux服务器运维管理面板</p>
+</blockquote>
+<h4 id="安装">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85"></a>
+安装
+</h4><p><strong>在你的VPS中执行以下安装脚本，根据命令提示完成1panel的安装</strong>（国际版1panel，推荐）：</p>
+        
+        <hr><p>本文2025-08-17首发于<a href='http://localhost:1313/'>wdnmlgbd</a>，最后修改于2025-08-17</p>]]>
+      </description>
+      
+        <category>VPS配置</category>
+      
+    </item>
+    
+  </channel>
+</rss>
