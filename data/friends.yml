@@ -1,5 +1,4 @@
-- name: 示例友链
-  url: https://exp.com
-  desc: 示范
-  image: https://d-sketon.github.io/avatar/avatar.webp
-
+- name: KFC/肯德基
+  url: https://www.kfc.com.cn
+  desc: 肯德基，你懂的，vivo伍拾
+  image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYZmvDC9m3LAO8xNCaDqV1pKPco3HoxzbLjH3UIx3t3g&s=10

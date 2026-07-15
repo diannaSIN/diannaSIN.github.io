@@ -11,6 +11,6 @@ lastmod: 2022-06-09T20:12:52+08:00
 - 站名： wdnmlgbd的家
 - 站长： wdnmlgbd
 
-> 现在站长还没有朋友
 
+> 以下是友链
 {{< friendsLink >}}
