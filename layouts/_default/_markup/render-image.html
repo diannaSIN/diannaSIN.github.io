@@ -1,0 +1,14 @@
+{{- $src := .Destination -}}
+
+<!-- 1. 功能页面让hugo在构建的时候把图床图片链接替换为自己的博客链接用于cdn加速 -->
+<!--图床链接-->
+{{- $oldHost := "https://raw.githubusercontent.com/diannaSIN/blogImage/image" -}}
+<!--博客链接（CDN域名）-->
+{{- $newHost := "https://www.wdnmlgbd.de" -}}
+
+<!--功能区-->
+{{- if strings.HasPrefix $src $oldHost -}}
+{{- $src = replace $src $oldHost $newHost -}}
+{{- end -}}
+
+<img src="{{ $src | safeURL }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}" {{ end }} loading="lazy" />
